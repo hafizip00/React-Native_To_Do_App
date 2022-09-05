@@ -6,6 +6,7 @@ const GoalItem = ({ text, deleteHandler, id }) => {
       <Pressable
         onPress={() => deleteHandler(id)}
         android_ripple={{ color: "#fff" }}
+        style={({ pressed }) => pressed && styles.pressedItem}
       >
         <Text style={styles.goalText}>{text}</Text>
       </Pressable>
@@ -24,5 +25,8 @@ const styles = StyleSheet.create({
   goalText: {
     color: "white",
     padding: 10,
+  },
+  pressedItem: {
+    opacity: 0.5,
   },
 });
